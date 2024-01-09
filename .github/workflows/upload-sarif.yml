@@ -14,7 +14,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
       - name: Execute OpenSCA Action
-        uses: SuperChen-CC/action-test@v1
+        uses: SuperChen-CC/action-test@v1.0.2
         with:
           token: ${{ secrets.OPENSCA_TOKEN }}
           out: outputs/results.json,outputs/results.html
