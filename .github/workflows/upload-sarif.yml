@@ -16,7 +16,7 @@ jobs:
         run: |
           curl -sSL https://raw.githubusercontent.com/XmirrorSecurity/OpenSCA-cli/master/scripts/install.sh | sh
           export PATH=$PATH:/home/runner/.config/opensca-cli
-          opensca-cli -path . -token ${{ secrets.OPENSCA_TOKEN }} -proj "" -output results.json
+          opensca-cli -path . -token ${{ secrets.OPENSCA_TOKEN }} -proj "" -out results.json
       - name: Upload SARIF
         uses: github/codeql-action/upload-sarif@v3
         with:
