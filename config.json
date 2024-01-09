@@ -32,7 +32,7 @@
 
     // 开启进度条
     // open progress bar
-    "progress": true,
+    "progress": false,
 
     // 保留开发组件
     // save develop components
