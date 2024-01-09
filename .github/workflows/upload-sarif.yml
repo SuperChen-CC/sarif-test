@@ -13,11 +13,9 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-      - name: Execute OpenSCA Scan
-        run: |
-          curl -sSL https://raw.githubusercontent.com/XmirrorSecurity/OpenSCA-cli/master/scripts/install.sh | bash
-          opensca-cli -path . -token ${{ secrets.OPENSCA_TOKEN }} -proj "" -out results.json
-      - name: Upload SARIF results
-        uses: github/codeql-action/upload-sarif@v3
+      - name: Execute OpenSCA Action
+        uses: actions/action-test@v1
         with:
-          sarif_file: results.sarif
+          token: ${{ secrets.OPENSCA_TOKEN }}
+          out: outputs/results.json,outputs/results.html
+          
